@@ -13,8 +13,8 @@ public class Utils {
         System.out.println(user);
     }
 
-    public static void printUsers(GenericList<? extends User> users){
+    public static void printUsers(GenericList<? super User> users){
         GenericList<Object> temp = new GenericList<>();
-        Object x = users.get(0);
+        users.add(new Instructor(1));
     }
 }

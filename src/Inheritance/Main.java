@@ -1,10 +1,11 @@
 package Inheritance;
 
-import Planning.TimeTable;
+import Concurrency.ThreadDemo;
 
 public class Main {
     public static void main (String[] arg) {
-        TimeTable.print();
+        ThreadDemo.show();
     }
 }
+
 

@@ -6,6 +6,9 @@ public class TaxCalculator2018 implements TaxCalculator{
     public TaxCalculator2018(double taxableIncome) {
         this.taxableIncome = taxableIncome;
     }
+    public void print() {
+        System.out.println("Hello World");
+    }
 
     @Override
     public double calculateTax(){

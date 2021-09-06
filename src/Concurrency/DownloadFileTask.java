@@ -20,7 +20,7 @@ public class DownloadFileTask implements Runnable{
         status.done();
 
         synchronized (status) {
-            status.notify();
+            status.notifyAll();
         }
 
         System.out.println("Download Complete: " + Thread.currentThread().getName());

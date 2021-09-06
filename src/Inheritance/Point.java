@@ -13,11 +13,14 @@ public class Point {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        var point = (Point) o;
-        return x == point.x &&
-                y == point.y;
+        if (this == o)
+            return true;
+
+        if (!(o instanceof Point))
+            return false;
+
+        Point other = (Point) o;
+        return other.x == x && other.y == y;
     }
 
     @Override

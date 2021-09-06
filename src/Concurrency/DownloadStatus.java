@@ -1,14 +1,14 @@
 package Concurrency;
 
-import java.util.concurrent.atomic.LongAdder;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class DownloadStatus {
     private volatile boolean isDone;
-    private LongAdder totalBytes = new LongAdder();
+    private AtomicInteger totalBytes = new AtomicInteger();
     private int totalFiles;
 
     public void incrementTotalBytes() {
-        totalBytes.increment();
+        totalBytes.getAndIncrement();
     }
 
     public void incrementTotalFiles() {
@@ -16,7 +16,7 @@ public class DownloadStatus {
     }
 
     public int getTotalBytes() {
-        return totalBytes.intValue();
+        return totalBytes.get();
     }
 
     public int getTotalFiles() {
