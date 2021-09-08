@@ -8,6 +8,17 @@ public class Array {
         items = new int[length];
     }
 
+    private void resizeIfRequired() {
+        if (items.length == count) {
+            int[] newItems = new int[count * 2];
+
+            for (int i = 0; i < count; i++)
+                newItems[i] = items[i];
+
+            items = newItems;
+        }
+    }
+
     public void insert(int item) {
         if (items.length == count) {
             int[] newItems = new int[count * 2];
@@ -72,7 +83,18 @@ public class Array {
         items[index] = item;
     }
 
-    public void print(){
+    public Array intersect(Array newArr) {
+        Array intersection = new Array(count);
+
+        for (int item : items) {
+            if (newArr.indexOf(item) >= 0)
+                intersection.insert(item);
+        }
+
+        return intersection;
+    }
+
+    public void print() {
         for (int i = 0; i < count; i++) {
             System.out.println(items[i]);
         }

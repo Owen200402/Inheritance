@@ -69,7 +69,7 @@ public class LinkedList<E> {
         return indexOf(item) != -1;
     }
 
-    public void removeFirst() {
+    public void removeFirst() { // O(1)
         if (isEmpty())
             throw new NoSuchElementException();
 
@@ -85,7 +85,7 @@ public class LinkedList<E> {
         size--;
     }
 
-    public void removeLast() {
+    public void removeLast() { // O(n)
         if (isEmpty())
             throw new NoSuchElementException();
 
@@ -120,48 +120,21 @@ public class LinkedList<E> {
         return array;
     }
 
-    public void reverse() { //self-implemented
-//        var current = first;
-//        while(current != last) {
-//            current.nextBackUp = current.next;
-//            current = current.next;
-//        }
-//
-//        current = first;
-//        while(current != last) {
-//            var second = current.nextBackUp;
-//
-//            if(current == first) {
-//                second.next = current;
-//                current.next = null;
-//                current.nextBackUp = null;
-//                current = second;
-//            }
-//            else {
-//                second.next = current;
-//                current.nextBackUp = null;
-//                current = second;
-//            }
-//        }
-//
-//        last = first;
-//        first = current;
-//
-        // Mosh's solution:
-        if (isEmpty()) return;
+    public void reverse() { // IMPORTANT!!!
+       if (isEmpty()) return;
 
-        var previous = first;
-        var current = first.next;
-        while(current != null) {
-            var next = current.next;
-            current.next = previous;
-            previous = current;
-            current = next;
+       var prev = first;
+       var current = first.next;
+
+        while (current != null) {
+           var after = current.next;
+           current.next = prev;
+           prev = current;
+           current = after;
         }
-
         last = first;
         last.next = null;
-        first = previous;
+        first = prev;
     }
 
     public int getKthFromTheEnd(int k) {
@@ -223,4 +196,7 @@ public class LinkedList<E> {
         return first == null;
     }
 
+    public int size() {
+        return size;
+    }
 }
