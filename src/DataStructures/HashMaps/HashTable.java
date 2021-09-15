@@ -23,7 +23,7 @@ public class HashTable {
             return;
         }
         var bucket = getOrCreateBucket(key);
-        bucket.add(new Entry(key, value));
+        bucket.addLast(new Entry(key, value));
     }
 
     public String get(int key) {

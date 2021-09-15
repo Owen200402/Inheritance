@@ -9,7 +9,7 @@ public class TwoStacks {
 
     public TwoStacks(int capacity) {
         if (capacity <= 0) {
-            throw new IllegalArgumentException("The capacity has to be greater than zero.");
+            throw new IllegalArgumentException("Capacity must be 1 or greater");
         }
         items = new int[capacity];
         count1 = -1;

@@ -10,23 +10,23 @@ public class HashTableExercises {
         HashMap<Integer, Integer> map = new HashMap<>();
 
         for (var current : array) {
-            if (map.containsKey(current)) {
-                int value = map.get(current);
-                map.put(current, value + 1);
-            }
+            if (map.containsKey(current))
+                map.put(current, map.get(current) + 1);
             else
                 map.put(current, 1);
         }
 
-        int max = 0;
-        int result = 0;
-        for (var num : map.entrySet()) {
-            if (num.getValue() > max) {
-                max = num.getValue();
-                result = num.getKey();
+        int trace = 0;
+        int min = 0;
+
+        for (var entry : map.entrySet()) {
+            if (entry.getValue() > min) {
+                min = entry.getValue();
+                trace = entry.getKey();
             }
         }
-        return result;
+
+        return trace;
     }
 
     public int countPairsWithDiff(int[] array, int k) {
@@ -37,7 +37,8 @@ public class HashTableExercises {
         }
 
         int count = 0;
-        for (var current : array) { // a linear search
+        // a linear search
+        for (var current : array) {
                 if (set.contains(current + k))
                     count++;
                 if (set.contains(current - k))

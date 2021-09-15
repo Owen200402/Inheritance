@@ -11,14 +11,16 @@ public class PriorityQueue {
     }
 
     public void add(int item) {
-        if (isFull())
+        if (isFull()) {
             throw new IllegalStateException();
+        }
 
         var i = shiftItemsToInsert(item);
         items[i] = item;
         count++;
     }
 
+    // shift from the back to the front of the array
     public int shiftItemsToInsert(int item) {
         int i;
         for (i = count - 1; i >= 0; i--) {
