@@ -1,17 +1,16 @@
+import DataStructures.AVLTrees.AVLTree;
 import DataStructures.BinaryTrees.Tree;
 
 public class Main {
     public static void main (String[] arg) {
         Tree tree = new Tree();
-        tree.insert(7);
-        tree.insert(4);
-        tree.insert(9);
-        tree.insert(1);
-        tree.insert(6);
-        tree.insert(8);
         tree.insert(10);
+        tree.insert(5);
+        tree.insert(12);
 
-        System.out.println(tree);
+
+
+        System.out.println(tree.isPerfect());
     }
 }
 

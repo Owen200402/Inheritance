@@ -49,24 +49,6 @@ public class HashTableExercises {
         return count;
     }
 
-//    public int[] twoSum(int[] array, int target) {
-//        int[] array2 = new int[2];
-//
-//        for (int i = 0; i < array.length; i++) {
-//            var current = array[i];
-//            for (int j = i + 1; j < array.length; j++) {
-//                var pointer = array[j];
-//                if (current + pointer == target) {
-//                    array2[0] = i;
-//                    array2[1] = j;
-//                    break;
-//                }
-//            }
-//
-//        }
-//        return array2;
-//    }
-
     public int[] twoSum(int[] array, int target) {
         Map<Integer, Integer> map = new HashMap<>();
 
