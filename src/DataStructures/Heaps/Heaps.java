@@ -110,6 +110,37 @@ public class Heaps {
         items[second] = temp;
     }
 
+    public int max() {
+        if (isEmpty())
+            throw new IllegalStateException();
+
+        return items[0];
+    }
+
+    public static boolean isMaxHeap(int[] array) {
+        return isMaxHeap(array, 0);
+    }
+
+    private static boolean isMaxHeap(int[] array, int index) {
+        int lastParentIndex = array.length / 2 - 1;
+
+        if (index > lastParentIndex)
+            return true;
+
+        int leftIndex = index * 2 + 1;
+        int rightIndex = index * 2 + 2;
+
+        if (rightIndex == array.length)
+            return (array[leftIndex] < array[index])
+                    && isMaxHeap(array, leftIndex)
+                    && isMaxHeap(array, rightIndex);
+
+        return (array[leftIndex] < array[index])
+                && (array[rightIndex] < array[index])
+                && isMaxHeap(array, leftIndex)
+                && isMaxHeap(array, rightIndex);
+    }
+
     @Override
     public String toString() {
         return Arrays.toString(items);

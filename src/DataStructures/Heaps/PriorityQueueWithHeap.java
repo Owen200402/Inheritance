@@ -14,4 +14,9 @@ public class PriorityQueueWithHeap {
     public boolean isEmpty() {
         return heap.isEmpty();
     }
+
+    @Override
+    public String toString() {
+        return heap.toString();
+    }
 }
