@@ -1,7 +1,7 @@
 package DataStructures.Heaps;
 
 public class MinHeap {
-    public static class Node {
+    private static class Node {
         private int key;
         private String value;
 
