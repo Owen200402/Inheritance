@@ -115,7 +115,7 @@ public class Graph {
         }
     }
 
-    public void traverseBreathFirst(String root) {
+    public void traverseBreadthFirst(String root) {
         Node node = nodes.get(root);
         if (node == null)
             return;
