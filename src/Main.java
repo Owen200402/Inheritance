@@ -1,10 +1,13 @@
-import SearchingAlgorithm.LinearSearch;
+
+import SearchingAlgorithm.ExponentialSearch;
 
 public class Main {
     public static void main (String[] arg) {
-        int[] array = { 6, 2, 5, 4, 3, 7 };
-        var search = new LinearSearch();
-        var result = search.search(array, 2);
+        int[] array = { 3, 5, 6, 9, 11, 18, 20, 21, 24, 30 };
+        var search = new ExponentialSearch();
+        var result = search.search(array, 30);
         System.out.println(result);
     }
+
+
 }
